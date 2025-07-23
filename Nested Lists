@@ -1,0 +1,22 @@
+# Nested Lists
+# https://www.hackerrank.com/challenges/nested-list/problem?isFullScreen=true
+
+if __name__ == '__main__':
+    score_list = []
+    for _ in range(int(input())):
+        name = input()
+        score = float(input())
+        score_list.append([name,score])
+    marks = []
+    for i in score_list:
+        marks.append(i[1])
+    unique_marks=set(marks)
+    unique_marks=list(unique_marks)
+    unique_marks.sort()
+    names = []
+    for i in score_list:
+        if i[1] == unique_marks[1]:
+            names.append(i[0])
+    names.sort()
+    for name in names:
+        print(name)
